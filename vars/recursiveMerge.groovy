@@ -22,7 +22,7 @@ def call(Map pipelineParams) {
         if [ "${env.MERGE_GIT_USER}" != "null" ]; then
             export GIT_USER=${env.MERGE_GIT_USER}
         fi
-        export STATUS=${params.STATUS} MERGE_OPTIONS="${params.MERGE_OPTIONS}"
+        export STATUS=${env.STATUS} MERGE_OPTIONS="${env.MERGE_OPTIONS}"
         bash build/build-infra-master/recursive-merge
     """
 
